@@ -4,9 +4,10 @@ services:
   hello:
     image: alpine:3.16.3
     hostname: hello
-    command: sh -c "while sleep 2; do echo hello; done"
+    command: sh -c 'while sleep 2; do echo "$$MSG"; done'
     environment:
       - NOME=hello
+      - MSG=Hello, World!
   
   monitor:
     build: monitor/
